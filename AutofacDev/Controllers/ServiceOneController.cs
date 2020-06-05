@@ -10,13 +10,11 @@ namespace AutofacDev.Controllers
     public class ServiceOneController : ControllerBase
     {
         private readonly IServiceOne _serviceOne;
-        private readonly IServiceTwo _serviceTwo;
         private readonly ILogger<ServiceOne> _logger;
-        public ServiceOneController(IServiceOne serviceOne, ILogger<ServiceOne> logger, IServiceTwo serviceTwo)
+        public ServiceOneController(IServiceOne serviceOne, ILogger<ServiceOne> logger)
         {
             _serviceOne = serviceOne;
             _logger = logger;
-            _serviceTwo = serviceTwo;
         }
 
         [HttpGet]
@@ -31,7 +29,7 @@ namespace AutofacDev.Controllers
         public string SetDataName(string dataName)
         {
             _serviceOne.SetDataName(dataName);
-            return _serviceOne.Loading()+" ||||| "+_serviceTwo.LoadingData();
+            return _serviceOne.Loading();
         }
         
     }
