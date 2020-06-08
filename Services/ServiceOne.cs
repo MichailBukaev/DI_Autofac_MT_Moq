@@ -1,5 +1,9 @@
-﻿using Contexts;
+﻿using System;
+using System.Threading.Tasks;
+using Contexts;
 using Data;
+using MassTransit;
+using Messages;
 using Microsoft.Extensions.Logging;
 
 namespace Services
@@ -8,12 +12,14 @@ namespace Services
     {
         private readonly IDataAccess _dataAccess;
         private readonly ILogger<ServiceOne> _logger;
+        private readonly IBusControl _busControl;
         public IContext Context { get; set; }
 
-        public ServiceOne(IDataAccess dataAccess, ILogger<ServiceOne> logger)
+        public ServiceOne(IDataAccess dataAccess, ILogger<ServiceOne> logger, IBusControl busControl)
         {
             _dataAccess = dataAccess;
             _logger = logger;
+            _busControl = busControl;
         }
 
         public string Loading()
@@ -32,8 +38,21 @@ namespace Services
 
         public void SetDataName(string dataName)
         {
-            _logger.LogInformation("Set Name of data: {@dataName}", dataName);
             _dataAccess.SetDataName(dataName);
+            _logger.LogInformation("Set Name of data: {@dataName}. Data Access {@dataAccess}", dataName, _dataAccess);
+        }
+
+        public void PushNotification(string text)
+        {
+            _busControl.Publish<NotificationMessage>(new {Text = text});
+        }
+
+        public async void SendEmail(string text)
+        {
+            Uri senderEMailAdress = new Uri(Context.Configuration["senderEMailUri"]);
+            var endpoint = await _busControl.GetSendEndpoint(senderEMailAdress);
+            await endpoint.Send<SendLetterMessage>(new { Message = text});
+
         }
     }
 }

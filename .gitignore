@@ -2,8 +2,8 @@ debug/
 release/
 bin/
 obj/
+.vs/
 *.suo
-*.json
 *.dll
 *.exe
 *.pdb

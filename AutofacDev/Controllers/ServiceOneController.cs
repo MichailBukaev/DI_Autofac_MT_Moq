@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.Features;
+﻿using System;
+using MassTransit;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Services;
@@ -31,6 +33,22 @@ namespace AutofacDev.Controllers
             _serviceOne.SetDataName(dataName);
             return _serviceOne.Loading();
         }
-        
+
+        [HttpPost]
+        [Route("PushNotification")]
+        public IActionResult PushNotification(string notif)
+        {
+            _serviceOne.PushNotification(notif);
+            return Ok();
+        }
+        [HttpPost]
+        [Route("SendLetter")]
+        public IActionResult SendLetter(string letter)
+        {
+            _serviceOne.SendEmail(letter);
+            return Ok();
+        }
+
+
     }
 }

@@ -1,11 +1,14 @@
-﻿using System;
-
+﻿
 namespace Data
 {
     public class DataAccess : IDataAccess
     {
         private readonly IName _name;
         private string _access;
+        public string Access
+        {
+            get { return _access; }
+        }
         public DataAccess(IName name)
         {
             _name = name;
