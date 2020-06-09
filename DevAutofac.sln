@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D0D3B47E-6855-49F6-AEB4-1BC14D6140B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{D0D3B47E-6855-49F6-AEB4-1BC14D6140B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{E6A0D669-2EF1-4058-8FD0-0A00067BE496}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contexts", "Contexts\Contexts.csproj", "{40708769-9B76-43BF-8E80-7952655E8CE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contexts", "Contexts\Contexts.csproj", "{40708769-9B76-43BF-8E80-7952655E8CE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacDev", "AutofacDev\AutofacDev.csproj", "{34441484-BBD2-400A-89C5-6B2543BFADE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutofacDev", "AutofacDev\AutofacDev.csproj", "{34441484-BBD2-400A-89C5-6B2543BFADE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailServiceHost", "MailServiceHost\MailServiceHost.csproj", "{CF9C28E3-185A-4167-8B6D-3DE1E2BD1907}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "Messages\Messages.csproj", "{C4802E43-34B0-438B-A575-2A2D2753498D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSServiceHost", "SMSServiceHost\SMSServiceHost.csproj", "{EA41744A-EEC9-496F-B44F-20CF4F769236}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{34441484-BBD2-400A-89C5-6B2543BFADE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34441484-BBD2-400A-89C5-6B2543BFADE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34441484-BBD2-400A-89C5-6B2543BFADE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9C28E3-185A-4167-8B6D-3DE1E2BD1907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9C28E3-185A-4167-8B6D-3DE1E2BD1907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9C28E3-185A-4167-8B6D-3DE1E2BD1907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9C28E3-185A-4167-8B6D-3DE1E2BD1907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4802E43-34B0-438B-A575-2A2D2753498D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4802E43-34B0-438B-A575-2A2D2753498D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4802E43-34B0-438B-A575-2A2D2753498D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4802E43-34B0-438B-A575-2A2D2753498D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA41744A-EEC9-496F-B44F-20CF4F769236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA41744A-EEC9-496F-B44F-20CF4F769236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA41744A-EEC9-496F-B44F-20CF4F769236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA41744A-EEC9-496F-B44F-20CF4F769236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

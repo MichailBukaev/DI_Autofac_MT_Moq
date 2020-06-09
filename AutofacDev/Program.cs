@@ -1,7 +1,9 @@
     using Autofac.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Hosting;
+    using MassTransit;
+    using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
 using Serilog;
 
 namespace AutofacDev
