@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MassTransit;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
@@ -49,6 +50,13 @@ namespace AutofacDev.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("SendSms")]
+        public async Task<string> SendSms(string sms)
+        {
+            string response = await _serviceOne.SendSms(sms);
+            return response;
+        }
 
     }
 }

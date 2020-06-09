@@ -26,7 +26,7 @@ namespace AutofacDev
             builder.RegisterType<ServiceTwo>().As<IServiceTwo>()
                 .WithParameter("name", _configuration["ServiceTwoName"])
                 .PropertiesAutowired();
-            builder.RegisterType<DataAccess>().As<IDataAccess>();
+            builder.RegisterType<DataAccess>().As<IDataAccess>().PropertiesAutowired();
             builder.RegisterType<Name>().As<IName>().InstancePerLifetimeScope();
             LoadBus(builder);
         }
