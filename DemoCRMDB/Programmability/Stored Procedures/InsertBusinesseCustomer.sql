@@ -4,7 +4,7 @@
 	@Password nvarchar(100),
 	@City nvarchar(50),
 	@Name nvarchar(50),
-	@Identity_Code nvarchar,
+	@Identity_Code nvarchar(50),
 	@Registration_date datetime
 AS
 begin

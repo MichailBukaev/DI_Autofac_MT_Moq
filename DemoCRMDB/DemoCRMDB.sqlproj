@@ -82,11 +82,30 @@
     <Build Include="Programmability\Stored Procedures\InsertEmployee.sql" />
     <Build Include="Programmability\Stored Procedures\InsertBusinesseCustomer.sql" />
     <Build Include="Programmability\Stored Procedures\GetIndividualCustomerById.sql" />
+    <None Include="Deployment\InsertData.sql" />
+    <Build Include="Tables\DbVersion.sql" />
+    <Build Include="Deployment\SetDbVersion.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DemoCRMDB.publish.xml" />
+    <None Include="Deployment\Upgrade_postdeploy_20200724.sql" />
+    <None Include="Deployment\Upgrade_postdeploy_x.x.xxxx.xxxx.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Deployment\Script.PostDeployment1.sql" />
+    <PostDeploy Include="Deployment\PostDeploymentScript.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Deployment\PreDeploymentScript.sql" />
+    <None Include="Deployment\Upgrade_predeploy_x.x.xxxx.xxxx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="DbType">
+      <DefaultValue>production</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="DbVer">
+      <DefaultValue>x.x.xxxx.xxxx</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
 </Project>

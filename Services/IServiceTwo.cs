@@ -2,9 +2,9 @@
 
 namespace Services
 {
-    public interface IServiceTwo
-    {
-        string LoadingData();
-        string SavingData();
-    }
+  public interface IServiceTwo
+  {
+    string LoadingData();
+    string SavingData();
+  }
 }
